@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underwriting</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bb">
+    <div class="sidenav">
+        <input type="hidden" name="company_id" id="company_id" value="<%= company_id %>">
+        <a href="/portfolio">Companies</a>
+        <a href="/portfolio?company=<%= company_id %>">Portfolio</a>
+        <a href="/claims?company=<%= company_id %>">Claims</a>
+    </div>
+    <div class="container">
+        <h1><%= company_name %> Underwriting</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Policy ID</th>
+                    <th>Premium</th>
+                    <th>Loss Rasio</th>
+                    <th>Policyholder</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% uws.forEach(uw => { %>
+                    <tr>
+                        <td><%= uw.policy_id %></td>
+                        <td><%= uw.premium %></td>
+                        <td><%= uw.loss_ratio %></td>
+                        <td><%= uw.policyholder_type %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

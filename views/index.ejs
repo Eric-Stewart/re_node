@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Company</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bb">
+    <div class="container">
+        <h1>Select a Company</h1>
+        <form action="/portfolio" method="get">
+            <div class="form-group">
+                <select class="form-control" id="company" name="company">
+					<% for (const company of companies) { %>
+						  <option value="<%= company.pk %>"><%= company.company_name %></option>
+						<% } %>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">View Portfolio</button>
+        </form>
+    </div>
+</body>
+</html>
