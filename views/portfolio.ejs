@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= company_name %> Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bb">
+    <div class="sidenav">
+        <a href="/">Companies</a>
+        <a href="/claims?company=<%= company_id %>">Claims</a>
+        <a href="/underwriting?company=<%= company_id %>">UW Data</a>
+    </div>
+    <div class="container main-content">
+        <h1><%= company_name %> Portfolio</h1>
+
+        <h4>Add New Policy</h4>
+        <form action="/add_policy" method="post">
+            <input type="hidden" name="company_id" id="company_id" value="<%= company_id %>">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="coverage_amount">Coverage Amount:</label>
+                    <input type="text" class="form-control" id="coverage_amount" name="coverage_amount">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="region">Region:</label>
+                    <input type="text" class="form-control" id="region" name="region">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Policy</button>
+        </form>
+        <br>
+        <table class="table">
+         <thead>
+             <tr>
+                 <th>Policy ID</th>
+                 <th>Coverage Amount</th>
+                 <th>Region</th>
+             </tr>
+         </thead>
+         <tbody>
+             <% policies.forEach(policy => { %>
+                 <tr>
+                     <td><%= policy.pk %></td>
+                     <td><%= policy.coverage_amount %></td>
+                     <td><%= policy.region %></td>
+                 </tr>
+             <% }); %>
+         </tbody>
+     </table>
+    </div>
+    <div style="position:center; margin-left: auto; margin-right: auto; width:500px; height:500px;">
+    <canvas id="stockChart" width="400" height="800"></canvas>
+    </div>
+    </body>
+        <script>
+            // Function to fetch stock data from the server
+            async function fetchStockData() {
+                var company_id = document.getElementById('company_id').value;
+                try {
+                    const response = await fetch('/stock_data?company='.concat(company_id));
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch stock data');
+                    }
+                    const data = await response.json();
+                    return data;
+                } catch (error) {
+                    console.error(error);
+                    return [];
+                }
+            }
+
+            // Populate stockData from database
+            fetchStockData().then(stockData => {
+                // Extract dates and close prices from the data
+                const dates = stockData.map(data => data.date);
+                const closePrices = stockData.map(data => data.closePrice);
+
+                // Create a line chart
+                const ctx = document.getElementById('stockChart').getContext('2d');
+                ctx.canvas.width = 10;
+                ctx.canvas.height = 10;
+                const stockChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: 'Stock Close Price',
+                            data: closePrices,
+                            borderColor: 'blue',
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: true,
+                        scales: {
+                            xAxes: [{
+                                type: 'time',
+                                time: {
+                                    unit: 'day'
+                                }
+                            }],
+                            yAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Close Price'
+                                }
+                            }]
+                        }
+                    }
+                });
+            });
+        </script>
+</html>
