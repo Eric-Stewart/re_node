@@ -1,23 +1,29 @@
 {
-  "name": "node",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^5.3.3",
-    "ejs": "^3.1.9",
-    "express": "^4.18.3",
-    "sqlite3": "^5.1.7"
-  },
-  "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-plugin-react": "^7.34.1"
-  }
+    "name": "node",
+    "version": "1.0.0",
+    "homepage": "https://Eric-Stewart.github.io/re_node",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bootstrap": "^5.3.3",
+        "ejs": "^3.1.9",
+        "express": "^4.18.3",
+        "gh-pages": "^6.1.1",
+        "sqlite3": "^5.1.7"
+    },
+    "devDependencies": {
+        "@flydotio/dockerfile": "^0.5.3",
+        "eslint": "^8.57.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-plugin-react": "^7.34.1"
+    },
+	"engines":{
+		"node":">=14"
+	}
 }
