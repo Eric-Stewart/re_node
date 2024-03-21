@@ -2,24 +2,26 @@
 
 .sidenav {
     height: 100%;
-    width: 200px;
+    width: 0;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: #75B8C8;
     overflow-x: hidden;
+    transition: 0.5s;
     padding-top: 20px;
 }
 
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #000306;
-    display: block;
-    font-weight: bold
-}
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #000306;
+        display: block;
+        font-weight: bold;
+        transition: 0.3s;
+    }
         
 .sidenav a:hover {
     color: #f1f1f1;
@@ -29,3 +31,12 @@
     background-color: #F4ECEE;
     text-align: center;
 }
+
+p {
+    text-align: center;
+}
+
+    p span {
+        display: block;
+        text-align: left;
+    }

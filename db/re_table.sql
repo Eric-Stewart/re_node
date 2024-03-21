@@ -7,12 +7,21 @@ DROP TABLE IF EXISTS Financials;
 DROP TABLE IF EXISTS Risks;
 DROP TABLE IF EXISTS Operations;
 DROP TABLE IF EXISTS StockData;
+DROP TABLE IF EXISTS AI_SWAT_Analysis;
 
-SELECT "Table: Companies";
+SELECT 'Table: Companies';
 CREATE TABLE IF NOT EXISTS Companies (
 	pk INTEGER PRIMARY KEY, 
 	company_name VARCHAR(255),
 	type VARCHAR(100)
+);
+
+SELECT 'Table: AI_SWAT_Analysis';
+CREATE TABLE IF NOT EXISTS AI_SWOT_Analysis (
+	pk INTEGER PRIMARY KEY,
+	company_id INTEGER NOT NULL,
+	text BLOB,
+	FOREIGN KEY(company_id) REFERENCES Companies(pk)
 );
 
 SELECT 'Table: Policies';

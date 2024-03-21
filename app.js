@@ -101,6 +101,18 @@ app.get('/underwriting', (req, res) => {
   });
 });
 
+app.get('/swots', (req, res) => {
+  const company = req.query.company;
+  db.all('SELECT s.text, c.company_name FROM AI_SWOT_Analysis s RIGHT JOIN Companies c ON c.pk = s.company_id WHERE s.company_id = ?', [company], (err, rows) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({error: 'Failed to fetch claims data'});
+    } else {
+      res.render('swots', {swots: rows, company_id: company, company_name: rows[0].company_name });
+    }
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server is listening at http://localhost:${port}`);
 });

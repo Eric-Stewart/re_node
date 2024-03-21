@@ -1,17 +1,275 @@
 SELECT 'Insert: Companies';
 INSERT INTO Companies(pk, company_name, type)
 VALUES
-	(1, 'A', 'Large corporation' ),
-    (2,	'AMC', 'Large corporation' ),
-    (3,	'AMZN', 'Large corporation' ),
-    (4,	'COST', 'Large corporation' ),
-    (5,	'DOW', 'Large corporation' ),
-    (6,	'GOOGL', 'Large corporation' ),
-    (7,	'META', 'Large corporation' ),
-    (8,	'MSFT', 'Large corporation' ),
-    (9,	'NFLX', 'Large corporation' ),
-    (10,'NVDA', 'Large corporation' );
-	
+	(1, 'Agilent Technologies Inc', 'Large corporation' ),
+    (2,	'AMC Entertainment Holdings Inc', 'Large corporation' ),
+    (3,	'Amazon.com Inc', 'Large corporation' ),
+    (4,	'Costco Wholesale Corporation', 'Large corporation' ),
+    (5,	'Dow Jones Industrial Average', 'Large corporation' ),
+    (6,	'Alphabet Inc Class A', 'Large corporation' ),
+    (7,	'Meta Platforms Inc', 'Large corporation' ),
+    (8,	'Microsoft Corp', 'Large corporation' ),
+    (9,	'Netflix Inc', 'Large corporation' ),
+    (10,'NVIDIA Corp', 'Large corporation' );
+
+INSERT INTO AI_SWOT_Analysis(company_id, text)
+VALUES
+	(1, '**SWOT Analysis for Agilent Technologies Inc**
+**Strengths:**
+1. Diversified Product Portfolio: Agilent Technologies offers a wide range of products including analytical instruments, software, services, and consumables, catering to various industries such as pharmaceutical, chemical, and diagnostics.
+2. Technological Innovation: Agilent invests significantly in research and development, resulting in cutting-edge technologies and solutions that enhance its competitive edge.
+3. Strong Brand Recognition: With decades of experience and a reputation for quality and reliability, Agilent enjoys strong brand recognition globally, fostering customer trust and loyalty.
+4. Global Presence: Agilent operates in over 110 countries, enabling access to diverse markets and reducing dependency on any single region, thereby spreading risks.
+5. Strong Financial Performance: Agilent consistently demonstrates robust financial performance, with steady revenue growth and healthy profit margins, reflecting its operational efficiency and financial stability.
+
+**Weaknesses:**
+1. High Dependence on R&D: Agilent''s heavy reliance on research and development exposes it to the risk of unpredictable outcomes, and failure to innovate may result in loss of market share to competitors.
+2. Vulnerability to Economic Conditions: Agilent''s business is sensitive to economic downturns, as spending on scientific and laboratory equipment tends to decrease during periods of economic uncertainty, impacting sales and profitability.
+3. Integration Challenges: Acquisitions are integral to Agilent''s growth strategy, but integrating new businesses and technologies may pose challenges, including cultural differences, operational inefficiencies, and disruptions.
+4. Exposure to Regulatory Changes: Agilent operates in highly regulated industries, and changes in regulations, particularly in healthcare and environmental sectors, could necessitate costly modifications to products and services to ensure compliance.
+5. Concentrated Customer Base: Agilent''s revenue is heavily reliant on a few key customers, and the loss of any major customer could significantly impact financial performance and shareholder value.
+
+**Opportunities:**
+1. Emerging Markets: Expansion into emerging markets presents significant growth opportunities for Agilent, particularly in Asia-Pacific and Latin America, where increasing industrialization and healthcare spending are driving demand for analytical instrumentation and services.
+2. Technological Advancements: Continued advancements in technologies such as genomics, proteomics, and precision medicine create opportunities for Agilent to develop innovative solutions that address evolving customer needs and drive revenue growth.
+3. Strategic Partnerships: Collaborating with academic institutions, research organizations, and industry partners can enhance Agilent''s research capabilities, accelerate product development, and access new markets and customer segments.
+4. Digital Transformation: Leveraging digital technologies such as data analytics, artificial intelligence, and cloud computing can enhance Agilent''s offerings, improve operational efficiency, and provide new revenue streams through value-added services.
+5. Expansion in Adjacent Markets: Agilent can explore opportunities for diversification by expanding into adjacent markets such as food safety testing, environmental monitoring, and forensic analysis, leveraging its expertise in analytical instrumentation and scientific solutions.
+
+**Threats:**
+1. Intense Competition: Agilent faces competition from established players like Thermo Fisher Scientific and Waters Corporation, as well as emerging companies and niche players, intensifying price competition and eroding market share.
+2. Rapid Technological Obsolescence: The fast pace of technological advancements poses a threat to Agilent, as its products risk becoming obsolete quickly, necessitating continuous innovation and investment to maintain competitiveness.
+3. Supply Chain Disruptions: Disruptions in the supply chain due to factors such as natural disasters, geopolitical tensions, or pandemics could impact Agilent''s manufacturing operations, leading to delays in product delivery and increased costs.
+4. Regulatory Compliance: Stringent regulatory requirements in industries such as healthcare, pharmaceuticals, and environmental testing pose a threat to Agilent, as non-compliance could result in fines, product recalls, and damage to reputation.
+5. Economic Uncertainty: Global economic instability, including factors such as trade disputes, currency fluctuations, and geopolitical tensions, could adversely affect Agilent''s business operations, customer spending, and financial performance.
+
+In conclusion, while Agilent Technologies Inc. possesses significant strengths and opportunities for growth, it must address weaknesses and mitigate threats to maintain its competitive position and achieve long-term success in the dynamic market landscape.'),
+	(2, '**SWOT Analysis for AMC Entertainment Holdings, Inc.**
+
+**Strengths:**
+1. Brand Recognition: AMC is one of the most recognized cinema brands globally, known for its extensive network of theaters and premium movie-viewing experience, which enhances customer loyalty and attracts moviegoers.
+2. Diversified Revenue Streams: AMC has diversified its revenue streams beyond ticket sales, including concessions, advertising, and premium experiences like IMAX and Dolby Cinema, providing multiple sources of income.
+3. Strategic Partnerships: Collaborations with movie studios, streaming platforms, and technology companies enable AMC to secure exclusive content, leverage new distribution channels, and offer innovative services to enhance the moviegoing experience.
+4. Digital Transformation: AMC has invested in digital technologies, including online ticketing platforms, mobile apps, and loyalty programs, improving customer convenience and engagement while capturing valuable data for targeted marketing and personalized offerings.
+5. Global Presence: With operations in multiple countries, including the United States, Europe, and Asia, AMC benefits from geographic diversification, access to diverse markets, and potential growth opportunities in emerging economies.
+
+**Weaknesses:**
+1. High Fixed Costs: Operating a large network of theaters entails high fixed costs, including rent, utilities, and maintenance, making AMC vulnerable to revenue fluctuations and margin pressure during periods of low attendance or economic downturns.
+2. Dependence on Film Releases: AMC''s revenue is heavily dependent on the success of film releases, and factors such as film quality, scheduling, and competition from streaming services can impact box office performance, leading to revenue volatility.
+3. Debt Burden: AMC carries a significant amount of debt, resulting from acquisitions, capital expenditures, and pandemic-related losses, which increases financial leverage, interest expenses, and risk exposure to changes in interest rates.
+4. Vulnerability to External Factors: External factors such as changes in consumer behavior, movie piracy, regulatory changes, and public health crises (e.g., COVID-19) can disrupt AMC''s operations, reduce attendance, and adversely affect financial performance.
+5. Limited Growth Potential: The traditional cinema industry faces challenges from alternative entertainment options, including streaming services, home theaters, and video games, limiting AMC''s growth potential and requiring strategic adaptations to remain competitive.
+
+**Opportunities:**
+1. Premium Experiences: Expanding premium offerings such as dine-in theaters, luxury recliners, and immersive technologies can attract customers seeking enhanced entertainment experiences and differentiate AMC from competitors.
+2. Content Diversification: Diversifying content beyond traditional movies to include live events, sports broadcasts, gaming tournaments, and alternative programming can appeal to broader audiences and drive attendance during non-peak hours.
+3. International Expansion: Investing in international markets with growing middle-class populations and rising disposable incomes, particularly in Asia and Latin America, presents opportunities for AMC to expand its global footprint and increase revenue.
+4. Strategic Alliances: Forming strategic alliances with streaming platforms, content creators, and technology firms can facilitate content sharing, cross-promotion, and synergistic partnerships that benefit both parties and enrich the movie ecosystem.
+5. Digital Innovation: Embracing digital innovation through virtual reality (VR), augmented reality (AR), and interactive experiences can revolutionize the moviegoing experience, attract younger audiences, and foster brand differentiation in a rapidly evolving entertainment landscape.
+
+**Threats:**
+1. Streaming Competition: Increasing competition from streaming services such as Netflix, Disney+, and Amazon Prime Video poses a threat to AMC, as consumers have more options to access content from the comfort of their homes, reducing demand for traditional cinema experiences.
+2. Piracy and Illegal Streaming: Rampant piracy and illegal streaming of movies online undermine theater attendance and revenue potential for AMC, as viewers opt for free or unauthorized access to content, eroding the value proposition of paying for theatrical releases.
+3. Regulatory Challenges: Regulatory changes related to antitrust laws, content distribution, intellectual property rights, and health and safety regulations can impact AMC''s operations, compliance costs, and ability to adapt to evolving legal frameworks.
+4. Economic Uncertainty: Economic downturns, recessions, inflation, and unemployment can impact consumer discretionary spending on entertainment, leading to reduced attendance, lower ticket sales, and financial strain for AMC.
+5. Public Health Risks: Public health risks such as pandemics, infectious diseases, and health crises (e.g., COVID-19) pose ongoing threats to AMC''s business, necessitating stringent health and safety measures, capacity restrictions, and operational disruptions that affect attendance and revenue.
+
+In summary, AMC Entertainment Holdings, Inc. faces a dynamic and challenging operating environment characterized by both opportunities for growth and numerous threats to its traditional business model. By capitalizing on strengths, addressing weaknesses, and adapting to changing market conditions, AMC can navigate these challenges and position itself for long-term success in the evolving entertainment industry landscape.'),
+	(3, '"AMZN SWOT Analysis
+
+Strengths:
+
+-AMZN has a strong brand and is a market leader in e-commerce.
+
+-The company has a diversified business model with a growing presence in areas such as cloud computing, digital content, and consumer electronics.
+
+-AMZN has a strong financial position with plenty of cash on hand to invest in new growth opportunities.
+
+Weaknesses:
+
+-The company has a high valuation and is therefore susceptible to market fluctuations.
+
+-AMZN is heavily reliant on the US market and has yet to establish a significant presence in other regions.
+
+Opportunities:
+
+-The global e-commerce market is growing rapidly and AMZN is well-positioned to capitalize on this trend.
+
+-There is potential for AMZN to expand its cloud computing and digital content offerings.
+
+-The company could also enter new markets with its consumer electronics products.
+
+Threats:
+
+-The e-commerce market is highly competitive and AMZN faces stiff competition from the likes of Walmart and Alibaba.
+
+-The company’s reliance on the US market could pose a risk if the economy slows down.
+
+-AMZN could also be threatened by new regulations relating to data privacy and antitrust concerns."'),
+	(4, '"COST is a large company with many products and services. Its main strengths are its size, its brand recognition, and its financial stability. Its main weaknesses are its high cost structure and its reliance on a small number of suppliers. Its main opportunities are its growth potential in emerging markets and its ability to capitalize on trends such as e-commerce and mobile commerce. Its main threats are competitive pressure from other large retailers and the possibility of disruptive technological changes."'),
+	(5, '"**SWOT Analysis for Dow Jones**
+
+**Strengths:**
+1. Brand Reputation: Dow Jones is a globally recognized brand known for providing trusted financial news and information through its flagship publication, The Wall Street Journal, and other renowned media outlets, enhancing credibility and attracting a loyal readership.
+2. Market Leadership: Dow Jones dominates the financial news and information market, serving as a primary source of real-time market data, analysis, and insights for investors, businesses, and financial professionals worldwide, solidifying its position as a market leader.
+3. Diverse Product Portfolio: Dow Jones offers a diverse portfolio of products and services, including digital subscriptions, data feeds, conferences, and custom content solutions, catering to various segments of the financial services industry and generating multiple revenue streams.
+4. Strong Distribution Network: Dow Jones benefits from an extensive distribution network comprising print, digital, and mobile channels, enabling broad reach and accessibility to its content across different platforms and devices, driving audience engagement and revenue growth.
+5. Global Reach: With a presence in major financial centers around the world, Dow Jones has a global footprint that provides access to diverse markets, audiences, and opportunities for expansion, strengthening its competitive position and revenue potential.
+
+**Weaknesses:**
+1. Dependence on Advertising Revenue: Dow Jones relies heavily on advertising revenue, which can be volatile and susceptible to economic downturns, fluctuations in advertising spending, and competition from digital platforms, posing risks to revenue stability and growth.
+2. Subscription Model Challenges: While digital subscriptions have become increasingly important for Dow Jones''s revenue growth, the subscription model faces challenges such as subscription fatigue, price sensitivity, and competition from free or low-cost alternatives, potentially limiting subscriber acquisition and retention.
+3. Content Monetization: Monetizing digital content amidst the proliferation of free online news sources, social media platforms, and content aggregators presents a challenge for Dow Jones, as it seeks to balance the need for quality journalism with the imperative of generating sustainable revenue streams.
+4. Technology Infrastructure: Maintaining and updating technology infrastructure to support digital publishing, data analytics, and cybersecurity requirements requires ongoing investments and expertise, and any deficiencies or disruptions in technology systems could impact operations and customer experience.
+5. Regulatory Compliance: Dow Jones operates in a highly regulated industry subject to privacy, data protection, intellectual property, and antitrust laws, and non-compliance or legal challenges could result in fines, penalties, reputational damage, and operational disruptions.
+
+**Opportunities:**
+1. Digital Transformation: Embracing digital innovation and technology advancements, such as artificial intelligence, machine learning, and data analytics, presents opportunities for Dow Jones to enhance content personalization, user experience, and monetization capabilities, driving digital growth and engagement.
+2. Subscription Growth: Expanding digital subscription offerings, introducing tiered pricing models, and targeting niche markets or specialized content segments can drive subscriber acquisition, retention, and revenue growth, leveraging Dow Jones''s brand reputation and content expertise.
+3. Expansion into New Markets: Pursuing strategic partnerships, acquisitions, or joint ventures to enter new markets, industries, or geographic regions presents opportunities for Dow Jones to diversify revenue streams, broaden its audience reach, and capitalize on emerging trends and opportunities.
+4. Custom Content Solutions: Offering customized content solutions, research reports, and data analytics services to corporate clients, financial institutions, and other businesses can create additional revenue streams, deepen customer relationships, and differentiate Dow Jones from competitors.
+5. Brand Extension: Leveraging the Dow Jones brand to launch new products, services, or platforms targeting specific audience segments or industry verticals, such as education, healthcare, or technology, can unlock growth opportunities and extend the company''s influence and market reach.
+
+**Threats:**
+1. Competition from Digital Platforms: Intense competition from digital platforms, social media networks, and technology companies for advertising dollars, audience attention, and content distribution poses a threat to Dow Jones''s market share, relevance, and revenue potential.
+2. Disruption of Traditional Media: Disruptive technologies, changing consumer behavior, and shifts in media consumption habits, including cord-cutting, ad-blocking, and subscription fatigue, challenge the sustainability of traditional media business models, including Dow Jones''s print publications.
+3. Regulatory Risks: Regulatory changes, legal challenges, and government interventions related to media ownership, antitrust enforcement, privacy regulations, and content moderation pose risks to Dow Jones''s operations, content distribution, and business practices, requiring compliance efforts and legal resources.
+4. Economic Uncertainty: Economic downturns, recessions, financial market volatility, and geopolitical instability can impact advertising spending, corporate budgets, and consumer discretionary income, affecting Dow Jones''s advertising revenue, subscription growth, and financial performance.
+5. Technological Disruptions: Rapid technological advancements, cybersecurity threats, data breaches, and disruptions in digital infrastructure pose risks to Dow Jones''s technology platforms, data assets, and operational continuity, necessitating investments in cybersecurity, resilience, and technological innovation.
+
+In conclusion, while Dow Jones benefits from its strong brand reputation, market leadership, and diverse product portfolio, it faces challenges from evolving market dynamics, digital disruption, and regulatory complexities. By capitalizing on opportunities for digital transformation, subscription growth, market expansion, and brand extension, while mitigating threats through innovation, diversification, and regulatory compliance, Dow Jones can navigate the competitive landscape and sustain its leadership position in the global media industry."'),
+	(6, '"Strengths: 
+-Diversified business portfolio including search, advertising, cloud computing, hardware, and software
+-Strong brand recognition and reputation
+-Highly skilled workforce
+
+Weaknesses: 
+-Rely heavily on advertising revenue
+-Faces intense competition from other technology companies
+
+Opportunities: 
+-Continued growth in online advertising
+-Expansion into new markets
+-Develop new products and services
+
+Threats: 
+-Regulatory scrutiny
+-Increased competition
+-Technology changes"'),
+	(7, '"META is a global provider of end-to-end engineering, procurement, and construction (EPC) services for the energy sector. With a workforce of over 10,000 people and a global footprint spanning six continents, META has the experience and expertise to execute some of the world’s most complex energy projects.
+
+Strengths:
+
+-A strong track record of delivering complex energy projects on time and on budget
+-A global workforce with deep industry expertise
+-A strong balance sheet with low debt levels
+
+Weaknesses:
+
+-Reliance on the energy sector for the majority of its revenue
+-Geographic concentration in North America
+
+Opportunities:
+
+-An expanding global energy market
+-An increasing focus on renewable energy
+-The continued electrification of the global economy
+
+Threats:
+
+-Fluctuations in the price of oil and gas
+-Political instability in key markets
+-The rise of new technologies"'),
+	(8, '"Microsoft Corporation (MSFT) is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and services. Its best known software products are the Microsoft Windows line of operating systems, the Microsoft Office suite, and the Internet Explorer and Edge web browsers. Its flagship hardware products are the Xbox video game consoles and the Microsoft Surface tablet lineup. As of 2016, it is the world''s largest software maker by revenue, and one of the world''s most valuable companies.
+
+SWOT Analysis
+
+Strengths: 
+-Diversified product portfolio including software, hardware, and services
+-Strong brand recognition and customer loyalty
+-High barriers to entry
+-Strong financial position
+
+Weaknesses: 
+-Reliance on the Windows operating system
+-Lack of innovation
+-Stiff competition
+
+Opportunities: 
+-Growth in cloud computing
+-Increase in demand for mobile and cloud solutions
+-Emerging markets
+
+Threats: 
+-Cybersecurity threats
+-Intense competition
+-Regulatory scrutiny"'),
+	(9, '"NFLX SWOT Analysis
+
+Strengths
+
+1. Netflix has a strong brand and is a market leader in the online streaming industry.
+
+2. The company has a strong global presence, with operations in over 190 countries.
+
+3. Netflix has a large customer base, with over 130 million subscribers worldwide.
+
+4. The company has a diversified content portfolio, with a library of over 3,700 TV shows and movies.
+
+5. Netflix has strong relationships with content providers, which gives it a competitive advantage in acquiring new content.
+
+6. The company has a strong financial position, with over $8 billion in cash and no debt.
+
+Weaknesses
+
+1. Netflix is heavily reliant on content from third-party providers.
+
+2. The company faces intense competition from other streaming services, such as Amazon Prime, Hulu, and Sling TV.
+
+3. Netflix has high costs, which could limit its profitability.
+
+4. The company’s international expansion could be hindered by government regulations.
+
+Opportunities
+
+1. Netflix could benefit from the continued growth of the online streaming market.
+
+2. The company could expand its content offerings by creating its own original programming.
+
+3. Netflix could further grow its international presence.
+
+4. The company could explore new revenue streams, such as advertising.
+
+Threats
+
+1. Netflix could face increased competition from new entrants to the online streaming market.
+
+2. The company’s content could be subject to copyright infringement.
+
+3. Netflix could be adversely affected by a slowdown in the global economy."'),
+	(10, '"NVDA''s Strengths: 
+1. Strong brand recognition and customer loyalty.
+2. Diversified product portfolio with GPUs for gaming, professional visualization, data center, and automotive markets.
+3. Leading market share in the discrete GPU market.
+4. Strong R&D capabilities with over 1,600 patents granted and over 3,000 pending.
+5. Strong financial position with over $4 billion in cash and no debt.
+
+NVDA''s Weaknesses: 
+1. Dependence on the PC market, which is in decline.
+2. Increasing competition from AMD and Intel.
+3. NVIDIA''s GPUs are not compatible with all PCs.
+4. NVIDIA faces potential antitrust scrutiny in the EU.
+
+NVDA''s Opportunities: 
+1. Growing demand for GPUs in data center and artificial intelligence applications.
+2. Expansion into new markets such as automotive, robotics, and virtual reality.
+3. Licensing opportunities for NVIDIA''s technology.
+
+NVDA''s Threats: 
+1. Declining PC market.
+2. Increasing competition from AMD and Intel.
+3. Potential antitrust scrutiny in the EU."');
+
 
 SELECT 'Insert: Policies';
 INSERT INTO Policies (pk, company_id, coverage_amount, region)

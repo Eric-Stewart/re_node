@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claims</title>
+    <title>Underwriting</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -14,24 +14,20 @@
         <a href="/portfolio">Companies</a>
         <a href="/portfolio?company=<%= company_id %>">Portfolio</a>
         <a href="/underwriting?company=<%= company_id %>">UW Data</a>
-        <a href="/swots?company=<%= company_id %>">SWOT</a>
+        <a href="/claims?company=<%= company_id %>">Claims</a>
     </div>
     <div class="container">
-        <h1><%= company_name %> Claims</h1>
+        <h1><%= company_name %> </h1>
         <table class="table">
             <thead>
                 <tr>
-                    <th>Policy ID</th>
-                    <th>Amount</th>
-                    <th>Type</th>
+                    <th>CHAT GPT: SWOT Analysis</th>
                 </tr>
             </thead>
             <tbody>
-                <% claims.forEach(claim => { %>
+                <% swots.forEach(swot => { %>
                     <tr>
-                        <td><%= claim.policy_id %></td>
-                        <td><%= claim.claim_amount %></td>
-                        <td><%= claim.claim_type %></td>
+                        <td><%= swot.text %></td>
                     </tr>
                 <% }); %>
             </tbody>

@@ -9,10 +9,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bb">
-    <div class="sidenav">
+    <p><span style="font-size:30px;cursor:pointer" id="myMenu" onclick="openNav()">&#9776; </span></p>
+    <div class="sidenav" id="MySideNav">
         <a href="/">Companies</a>
         <a href="/claims?company=<%= company_id %>">Claims</a>
         <a href="/underwriting?company=<%= company_id %>">UW Data</a>
+        <a href="/swots?company=<%= company_id %>">SWOT</a>
     </div>
     <div class="container main-content">
         <h1><%= company_name %> Portfolio</h1>
@@ -47,6 +49,7 @@
                      <td><%= policy.pk %></td>
                      <td><%= policy.coverage_amount %></td>
                      <td><%= policy.region %></td>
+                     <td><button class="btn btn-danger btn-floating" onclick="deleteRow(this)">-</button></td>
                  </tr>
              <% }); %>
          </tbody>
@@ -113,5 +116,20 @@
                     }
                 });
             });
+        function deleteRow(button) {
+                const row = button.parentElement.parentElement;
+                row.remove();
+            }
+        function openNav() {
+            document.getElementById("MySideNav").style.width = "250px";
+        }
+
+        window.addEventListener('click', function (e) {
+            if (!document.getElementById('MySideNav').contains(e.target) && !document.getElementById('myMenu').contains(e.target)) {
+                document.getElementById("MySideNav").style.width = "0px";
+            }
+        });
+
         </script>
+
 </html>
