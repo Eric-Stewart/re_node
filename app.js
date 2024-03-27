@@ -3,7 +3,7 @@
 const express = require('express');
 const sqlite3 = require('sqlite3');
 const path = require('path');
-
+const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(express.urlencoded({extended: true}));
@@ -103,14 +103,66 @@ app.get('/underwriting', (req, res) => {
 
 app.get('/swots', (req, res) => {
   const company = req.query.company;
-  db.all('SELECT s.text, c.company_name FROM AI_SWOT_Analysis s RIGHT JOIN Companies c ON c.pk = s.company_id WHERE s.company_id = ?', [company], (err, rows) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({error: 'Failed to fetch claims data'});
-    } else {
-      res.render('swots', {swots: rows, company_id: company, company_name: rows[0].company_name });
-    }
+
+  db.all('SELECT company_name FROM Companies WHERE pk = ?', [company], (err, companyRows) => {
+      if (err) {
+          console.error(err);
+          res.status(500).json({ error: 'Failed to fetch company data' });
+          return;
+      }
+      const company_name = companyRows.length > 0 ? companyRows[0].company_name : null;
+      db.all('SELECT s.text, c.company_name FROM AI_SWOT_Analysis s RIGHT JOIN Companies c ON c.pk = s.company_id WHERE s.company_id = ?', [company], (err, rows) => {
+          if (err) {
+              console.error(err);
+              res.status(500).json({ error: 'Failed to fetch SWOT analysis data' });
+          } else if (rows.length === 0) {
+              res.render('no_data', { company_name: company_name, page_name: 'SWOT' });
+          } else {
+              res.render('swots', { swots: rows, company_id: company, company_name: company_name });
+          }
+      });
   });
+});
+
+app.use(bodyParser.json());
+
+app.post('/api/customers', (req, res) => {
+    const { name } = req.body;
+
+    if (!name) {
+        return res.status(400).json({ error: 'Name is required' });
+    }
+
+    db.run('INSERT INTO Companies (company_name) VALUES (?)', [name], function(err) {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        
+        res.status(201).json({ message: 'Customer added successfully', id: this.lastID });
+        db.run('INSERT INTO Policies (company_id) VALUES (?)', [this.lastID]);
+    });
+});
+
+app.delete('/api/customers/:id', (req, res) => {
+    const id = req.params.id;
+
+    db.run('DELETE FROM Companies WHERE pk = ?', [id], function(err) {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        
+        if (this.changes === 0) {
+            return res.status(404).json({ error: 'Customer not found' });
+        }
+
+        res.json({ message: 'Customer deleted successfully' });
+    });
+});
+
+app.get('/download', (req, res) => {
+  const file = path.join(__dirname, 'public', 'CompanyNameAPI.xlsm');
+  console.log(file);
+  res.download(file);
 });
 
 app.listen(port, () => {

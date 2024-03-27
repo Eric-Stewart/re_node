@@ -1,5 +1,6 @@
 import sqlite3
 
+
 # Function to execute SQL script
 def execute_script(cursor, script):
     try:
@@ -8,8 +9,9 @@ def execute_script(cursor, script):
     except sqlite3.Error as e:
         print("Error executing script:", e)
 
+
 # Connect to SQLite database (creates if not exists)
-conn = sqlite3.connect('reinsurance.db')
+conn = sqlite3.connect("reinsurance.db")
 cursor = conn.cursor()
 
 # SQL script

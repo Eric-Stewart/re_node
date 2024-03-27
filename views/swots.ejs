@@ -17,25 +17,25 @@
         <a href="/claims?company=<%= company_id %>">Claims</a>
     </div>
     <div class="container">
-        <h1><%= company_name %> </h1>
+<h1><%= company_name %> </h1>
         <table class="table">
-            <thead>
-                <tr>
-                    <th>CHAT GPT: SWOT Analysis</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% swots.forEach(swot => { %>
+        <thead>
+            <tr>
+                <th>CHAT GPT: SWOT Analysis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% swots.forEach(swot => { %>
                     <tr>
                         <td><%= swot.text %></td>
                     </tr>
                 <% }); %>
-            </tbody>
-        </table>
+        </tbody>
+</table>
     </div>
 </body>
     <script>
-    function openNav() {
+        function openNav() {
         document.getElementById("MySideNav").style.width = "250px";
     }
 
@@ -44,6 +44,6 @@
             document.getElementById("MySideNav").style.width = "0px";
         }
     });
-
-    </script>
+	
+        </script>
 </html>
